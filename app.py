@@ -17,8 +17,8 @@ def allowed_file(filename):
 # engine=sqlalchemy.create_engine("mysql+pymysql://root:12345@localhost/login")
 # conn=engine.connect()
 
-UPLOAD_FOLDER_INPUT = os.path.join(os.getcwd(),'static\\input\\')
-UPLOAD_FOLDER_OUTPUT = os.path.join(os.getcwd(),'static\\output\\')
+UPLOAD_FOLDER_INPUT = os.path.join(os.getcwd(),'static/input/')
+UPLOAD_FOLDER_OUTPUT = os.path.join(os.getcwd(),'static/output/')
 
 
 app = Flask(__name__,static_folder='static')
