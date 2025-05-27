@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- add icon link -->
+    <link rel="icon" href="static/about_database_img_2.jpeg" type="image/x-icon" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: ghostwhite;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+
+        .container {
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            color: #2E8B57;
+            margin-top: 10px;
+        }
+
+        .stat-text {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+        .description img {
+            max-width: 100%; /* Image won't be wider than its container */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove extra space below the image */
+            margin: auto; /* Center the image */
+        }
+
+        .button_info {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 200px;
+            font-size: 20px;
+        }
+
+        .button_info:hover {
+            background-color: #555;
+        }
+
+        .about-section {
+            background-image: url('static/img_back2.jpg');
+            padding: 10px;
+            text-align: center;
+            background-color: #474e5d;
+            color: ghostwhite;
+        }
+
+        .footer {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: ghostwhite;
+        }
+
+        a {
+            color: ghostwhite;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #DADADA;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div style="display: flex; margin: 10px;">
+    <div style="width: 35%;"></div>
+    <div style="width: 65%;">
+
+        <div style="display: inline-block">
+            <form action="/"><button class="button_info">Home</button></form></div>
+
+        <div style="display: inline-block">
+            <form action="/vs">
+            <button class="button_info" >Virtual Screening</button>
+            </form>
+        </div>
+        <div style="display: inline-block">
+            <form action="/help">
+                <button class="button_info">Help</button>
+            </form>
+        </div>
+
+        <div style="display: inline-block">
+            <form action="/team">
+                <button class="button_info">Contact Us</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="about-section">
+    <h1>ML-VS</h1>
+    <h2>Machine learning based models for Virtual Screening</h2>
+</div>
+
+<div class="container">
+
+    <div class="description">
+        <h2 style="color: #0c2461;"><u>Aboust ML-VS</u></h2>
+        <p style="text-align:justify;margin: 0 auto;">Virtual screening is a computational technique used in the early stages of drug discovery to identify potential drug candidates from large chemical libraries. It helps narrow down the compound libraries for experimental evaluation, reducing the cost and time associated with traditional drug development. Machine learning-based virtual screening of natural compounds is transforming drug discovery by accurately predicting protein-ligand interactions. In contrast to traditional methods such as experimental assays and computational docking, machine learning models improve efficiency by utilizing large datasets and advanced algorithms. To support this, we developed the <b>ML-VS</b> web server for rapid and accurate natural product-based screening of therapeutic proteins.</p>
+        <br>
+        <img src="{{ url_for('static', filename='ml_work.png') }}" style="border: 2px solid black;">
+
+    </div>
+</div>
+
+<div class="footer">
+    <h3> <a href="static/ICAR_Data_Use_Licence.pdf">ICAR Data Use License</a></h3>
+    <h3>Copyright &copy; ICAR - <a href="https://iasri.icar.gov.in/">Indian Agricultural Statistics Research Institute</a></h3>
+    <h3>Library Avenue, PUSA, New Delhi - 110 012 (INDIA)</h3>
+    <h3>Phone: 91-11-25847121-24, 25841254 (PBX), Fax: 91-11-25841564</h3>
+    <h3>All rights reserved</h3>
+    <a href="https://iasri.icar.gov.in/"><img src="static/iasri.png" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+    <a href="https://icar.org.in/"><img src="static/test_icar.jpg" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+    <a href="https://iari.res.in/en/index.php"><img src="static/iari.png" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+</div>
+
+<script>
+    // Function to animate the count with a specific step
+    function animateCount(id, start, end, duration, step) {
+        let range = end - start;
+        let current = start;
+        let increment = step || 1;
+        let stepTime = Math.abs(Math.floor(duration / (range / increment)));
+        let obj = document.getElementById(id);
+        let timer = setInterval(function() {
+            current += increment;
+            if (current > end) current = end;
+            obj.innerHTML = current;
+            if (current == end) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+
+    // Function to update and display the visitor count
+    function updateVisitorCount() {
+        const visitorCountKey = 'visitorCount';
+        let visitorCount = localStorage.getItem(visitorCountKey);
+        if (!visitorCount) {
+            visitorCount = 1; // First-time visit
+        } else {
+            visitorCount = parseInt(visitorCount) + 1;
+        }
+        localStorage.setItem(visitorCountKey, visitorCount);
+        document.getElementById("visitorCount").innerHTML = visitorCount;
+    }
+
+    // Start the count animations on page load
+    window.onload = function() {
+        animateCount("plantCount", 0, 262, 2000, 1);
+        animateCount("compoundCount", 0, 5281, 1500, 100);
+        updateVisitorCount();
+    };
+</script>
+
+</body>
+</html>

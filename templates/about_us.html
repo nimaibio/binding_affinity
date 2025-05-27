@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team</title>
+
+  <!-- add icon link -->
+  <link rel="icon" href="about_database_img_2.jpeg" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="static/about_database_img_2.jpeg" type="image/x-icon" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px; /* Medium text size */
+      margin: 0;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .column_footer {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      background-color: #474e5d;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 5px;
+      text-align: center; /* Center align text and images */
+    }
+
+    .card img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .about-section {
+      background-image: url('static/img_back2.jpg');
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: ghostwhite;
+    }
+
+    .footer {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: ghostwhite;
+    }
+
+    a {
+      color: ghostwhite;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #DADADA;
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    .button_info {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 200px;
+      font-size: 20px;
+    }
+
+    .button_info:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .footer_text {
+      padding-left: 5%;
+    }
+
+    .center-row {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<div style="display: flex; margin: 10px;">
+  <div style="width: 35%;">
+    <!-- Empty div -->
+  </div>
+
+  <!-- button div -->
+  <div style="width: 65%;">
+    <div style="display: inline-block">
+      <form action="/">
+        <button class="button_info" >Home</button>
+      </form>
+    </div>
+
+    <div style="display: inline-block">
+      <form action="vs">
+        <button class="button_info" >Virtual Screening</button>
+      </form>
+    </div>
+    <div style="display: inline-block">
+            <form action="/help">
+                <button class="button_info">Help</button>
+            </form>
+        </div>
+    <div style="display: inline-block">
+      <form action="/vs">
+        <button class="button_info" >Contact Us</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h1>Our Team</h1>
+  <h2>A Passionate and Experienced Group of Professionals</h2>
+</div>
+
+<div style="padding: 20px; text-align: center;">
+  <h2>Contacts</h2>
+  <p>For more details, feel free to contact us</p>
+  <div class="row center-row">
+    <div class="column">
+      <div class="card">
+        <img src="static/director1.jpg" alt="Mike" style="width:50%">
+        <div class="container">
+          <h2>Dr. Rajender Parsad</h2>
+          <p class="title">Director</p>
+          <p>ICAR-IASRI</p>
+          <p>director.iasri@icar.gov.in</p>
+          <p><button class="button" onclick="window.location.href='mailto:director.iasri@icar.gov.in';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/head.jpg" alt="John" style="width:50%">
+        <div class="container">
+          <h2>Dr. Girish Kumar Jha</h2>
+          <p class="title">Head</p>
+          <p>Division of Bioinformatics, ICAR-IASRI</p>
+          <p>girish.jha@icar.gov.in</p>
+          <p><button class="button" onclick="window.location.href='mailto:girish.jha@icar.gov.in';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding: 20px;">
+  <h2 style="text-align:center">Team Members</h2>
+
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="static/nimai_pic.jpg" alt="Jane" style="width:50%;">
+        <div class="container">
+          <h2>Nimai Charan Mahanandia</h2>
+          <p class="title">Ph.D. Scholar</p>
+          <p>Division of Bioinformatics, ICAR-IASRI</p>
+          <p>nimaibioinfo96@gmail.com</p>
+          <p><button class="button" onclick="window.location.href='mailto:nimaibioinfo96@gmail.com';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/mohit_pic.jpg" alt="Anu Sharma" style="width:50%">
+        <div class="container">
+          <h2>Mohit Kumar</h2>
+          <p class="title">Ph.D. Scholar</p>
+          <p>Division of Computer Application, ICAR-IASRI</p>
+          <p>mohit.iasri@gmail.com</p>
+          <p><button class="button" onclick="window.location.href='mailto:mohit.iasri@gmail.com';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/samir_sir_.jpg" alt="Jane" style="width:50%;">
+        <div class="container">
+          <h2>Md. Samir Farooqi</h2>
+          <p class="title">Principal Scientist</p>
+          <p>Division of Bioinformatics, ICAR-IASRI</p>
+          <p>ms.farooqi@icar.gov.in</p>
+          <p><button class="button" onclick="window.location.href='mailto:ms.farooqi@icar.gov.in';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="static/anu_mam.png" alt="Anu Sharma" style="width:50%">
+        <div class="container">
+          <h2>Anu Sharma</h2>
+          <p class="title">Principal Scientist</p>
+          <p>Division of Bioinformatics, ICAR-IASRI</p>
+          <p>anu.sharma@icar.gov.in</p>
+          <p><button class="button" onclick="window.location.href='mailto:anu.sharma@icar.gov.in';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/mishra_sir.jpg" alt="D.C. Mishra" style="width:50%">
+        <div class="container">
+          <h2>D.C. Mishra</h2>
+          <p class="title">Senior Scientist</p>
+          <p>Division of Bioinformatics, ICAR-IASRI</p>
+          <p>dwijesh.mishra@icar.gov.in</p>
+          <p><button class="button" onclick="window.location.href='mailto:dwijesh.mishra@icar.gov.in';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/kkc_sir.jpg" alt="K.K. Chaturvedi" style="width:50%">
+        <div class="container">
+          <h2>K.K. Chaturvedi</h2>
+          <p class="title">Principal Scientist</p>
+          <p>Division of Bioinformatics, ICAR-IASRI</p>
+          <p>kk.chaturvedi@icar.gov.in</p>
+          <p><button class="button" onclick="window.location.href='mailto:kk.chaturvedi@icar.gov.in';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="static/sudhir_sir.jpg" alt="Sudhir Srivastva" style="width:50%">
+        <div class="container">
+          <h2>Sudhir Srivastva</h2>
+          <p class="title">Senior Scientist</p>
+          <p>Division of Bioinformatics, ICAR-IASRI</p>
+          <p>sudhir.srivastava@icar.gov.in</p>
+          <p><button class="button" onclick="window.location.href='mailto:sudhir.srivastava@icar.gov.in';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="static/sneha_mam.jpg" alt="Sneha Murmu" style="width:50%">
+        <div class="container">
+          <h2>Sneha Murmu</h2>
+          <p class="title">Scientist</p>
+          <p>Division of Bioinformatics, ICAR-IASRI</p>
+          <p>sneha.murmu@icar.gov.in</p>
+          <p><button class="button" onclick="window.location.href='mailto:sneha.murmu@icar.gov.in';">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h3 class="footer_text"> <a href="ICAR_Data_Use_Licence.pdf">ICAR Data Use License</a></h3>
+
+  <h3> Copyright © ICAR -<a href="https://iasri.icar.gov.in/"> Indian Agricultural Statistics Research Institute</a></h3>
+
+  <h3> Library Avenue, PUSA, New Delhi - 110 012 (INDIA)</h3>
+  <h3> Phone: 91-11-25847121-24, 25841254 (PBX), Fax: 91-11-25841564</h3>
+  <h3> All rights reserved</h3>
+
+  <a href="https://iasri.icar.gov.in/"><img src="static/iasri.png" alt="ICAR" style="width:100px;height:100px;border-radius:50%;"></a>
+  <a href="https://icar.org.in/"><img src="static/test_icar.jpg" alt="ICAR" style="width:100px;height:100px;border-radius:50%;"></a>
+  <a href="https://iari.res.in/en/index.php"><img src="static/iari.png" alt="ICAR" style="width:100px;height:100px;border-radius:50%;"></a>
+</div>
+
+</body>
+</html>

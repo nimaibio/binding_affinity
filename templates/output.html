@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual screening results</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Layout for main content */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Table */
+        .table-wrapper {
+            width: 100%;
+            max-height: 400px; /* Set max height for the table */
+            overflow-y: auto; /* Adds vertical scroll if content exceeds height */
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Alternating row colors for readability */
+        tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e9e9e9;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            table, th, td {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header h1 {
+                font-size: 20px;
+            }
+
+            table, th, td {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            button {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+        }
+
+        /header and footer/
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: ghostwhite;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container {
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .button_info {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 200px;
+            font-size: 20px;
+        }
+
+        .button_info:hover {
+            background-color: #555;
+        }
+
+        .about-section {
+            background-image: url('static/img_back2.jpg');
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: ghostwhite;
+        }
+
+        .footer {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: ghostwhite;
+        }
+
+        a {
+            color: ghostwhite;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #DADADA;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div style="display: flex; margin: 10px;">
+    <div style="width: 35%;"></div>
+    <div style="width: 65%;">
+
+        <div style="display: inline-block">
+            <form action="/"><button class="button_info">Home</button></form></div>
+
+        <div style="display: inline-block">
+            <form action="/vs">
+            <button class="button_info" >Virtual Screening</button>
+            </form>
+        </div>
+         <div style="display: inline-block">
+            <form action="/help">
+                <button class="button_info">Help</button>
+            </form>
+        </div>
+        <div style="display: inline-block">
+            <form action="/team">
+                <button class="button_info">Contact Us</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="about-section">
+    <h1>DPNP-CP</h1>
+    <h2>Database of Plant-Derived Natural Products for Crop Protection</h2>
+</div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 style="margin-bottom: 10px;color: #333;">Binding Affinity Prediction</h1>
+            <h2 style="margin-bottom: 10px;color: #333;">Download Predicted Binding Affinity File</h2>
+            <a href="{{ url_for('download_file', filename=file_name) }}">
+                <button>Click to Download File</button>
+            </a>
+        </div>
+
+        <!-- Table Section -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Compound Name/PubChem ID</th>
+                        <th>Binding Affinity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, value in predictions %}
+                    <tr>
+                        <td>{{ index }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+<div class="footer">
+    <h3> <a href="static/ICAR_Data_Use_Licence.pdf">ICAR Data Use License</a></h3>
+    <h3>Copyright &copy; ICAR - <a href="https://iasri.icar.gov.in/">Indian Agricultural Statistics Research Institute</a></h3>
+    <h3>Library Avenue, PUSA, New Delhi - 110 012 (INDIA)</h3>
+    <h3>Phone: 91-11-25847121-24, 25841254 (PBX), Fax: 91-11-25841564</h3>
+    <h3>All rights reserved</h3>
+    <a href="https://iasri.icar.gov.in/"><img src="static/iasri.png" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+    <a href="https://icar.org.in/"><img src="static/test_icar.jpg" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+    <a href="https://iari.res.in/en/index.php"><img src="static/iari.png" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+</div>
+</body>
+</html>

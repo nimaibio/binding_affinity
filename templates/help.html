@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+
+    <!-- add icon link -->
+    <link rel="icon" href="static/about_database_img_2.jpeg" type="image/x-icon" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: ghostwhite;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+
+        .container {
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+
+        .description {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+            text-align:left;
+        }
+        .description img {
+            max-width: 100%; /* Image won't be wider than its container */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove extra space below the image */
+            margin: auto; /* Center the image */
+        }
+
+        .button_info {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 200px;
+            font-size: 20px;
+        }
+
+        .button_info:hover {
+            background-color: #555;
+        }
+
+        .about-section {
+            background-image: url('static/img_back2.jpg');
+            padding: 10px;
+            text-align: center;
+            background-color: #474e5d;
+            color: ghostwhite;
+        }
+
+        .footer {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: ghostwhite;
+        }
+
+        a {
+            color: ghostwhite;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #DADADA;
+            text-decoration: underline;
+        }
+        .container button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div style="display: flex; margin: 10px;">
+    <div style="width: 35%;"></div>
+    <div style="width: 65%;">
+
+        <div style="display: inline-block">
+            <form action="/"><button class="button_info">Home</button></form></div>
+
+        <div style="display: inline-block">
+            <form action="/vs">
+            <button class="button_info" >Virtual Screening</button>
+            </form>
+        </div>
+        <div style="display: inline-block">
+            <form action="/help">
+                <button class="button_info">Help</button>
+            </form>
+        </div>
+        <div style="display: inline-block">
+            <form action="/team">
+                <button class="button_info">Contact Us</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="about-section">
+    <h1>ML-VS</h1>
+    <h2>Machine learning based models for Virtual Screening</h2>
+</div>
+
+<div class="container">
+
+    <div class="description">
+        <h2 style="color: #0c2461;"><u>Virtual Screening Workflow for ML-VS </u></h2>
+
+        <p><strong>Please select "Use DPNP-CP" for virtual screening:</strong></p>
+<ul>
+    <li><strong>Yes:</strong> The system will screen natural compounds against therapeutic proteins.</li>
+    <li><strong>No:</strong> Upload a compound library and protein file for screening. The compound library must be in <strong>SDF format</strong>.</li>
+</ul>
+
+<p><strong>Next Steps:</strong></p>
+<ol>
+    <li>Select a <strong>PDB file</strong> that contains either the <strong>entire protein</strong> or just the <strong>active site</strong> in <strong>PDB format</strong>.</li>
+    <li>Choose a <strong>prediction model</strong> to estimate the <strong>binding affinity</strong> of the protein-ligand complex.</li>
+</ol>
+
+        <br>
+         <h2 style="color: #0c2461;"><u>Downloads </u></h2>
+        <h2 style="color: #0c2461;text-align:left">Information Regarding the Downloaded Files:</h2>
+
+        <ol>
+    <li><strong>First File (SDF - Compound File):</strong> This file contains molecular structures of chemical compounds, typically small molecules or ligands, stored in <strong>Structure-Data File (SDF)</strong> format.</li>
+    <li><strong>Second File (PDB - Whole Protein):</strong> This <strong>Protein Data Bank (PDB)</strong> file represents the entire 3D structure of a protein, including all its atomic coordinates, chains, and possibly bound molecules.</li>
+    <li><strong>Third File (PDB - Active Site):</strong> This file contains only the <strong>active site</strong> region of the protein, which is the specific binding site for ligands, crucial for molecular docking and simulations.</li>
+</ol>
+
+
+        <a href="{{ url_for('download_sdf_file') }}">
+                <button>Click to Download sample SDF File</button>
+        </a>
+
+        <a href="{{ url_for('download_pdb_file') }}">
+                <button>Click to Download sample PDB File</button>
+        </a>
+
+        <a href="{{ url_for('download_active_site_file') }}">
+                <button>Click to Download Active Site PDB File</button>
+        </a>
+
+        <br>
+    </div>
+</div>
+
+<div class="footer">
+    <h3> <a href="static/ICAR_Data_Use_Licence.pdf">ICAR Data Use License</a></h3>
+    <h3>Copyright &copy; ICAR - <a href="https://iasri.icar.gov.in/">Indian Agricultural Statistics Research Institute</a></h3>
+    <h3>Library Avenue, PUSA, New Delhi - 110 012 (INDIA)</h3>
+    <h3>Phone: 91-11-25847121-24, 25841254 (PBX), Fax: 91-11-25841564</h3>
+    <h3>All rights reserved</h3>
+    <a href="https://iasri.icar.gov.in/"><img src="static/iasri.png" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+    <a href="https://icar.org.in/"><img src="static/test_icar.jpg" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+    <a href="https://iari.res.in/en/index.php"><img src="static/iari.png" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+</div>
+</body>
+</html>

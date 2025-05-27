@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Screening</title>
+
+    <!-- add icon link -->
+    <link rel="icon" href="static/about_database_img_2.jpeg" type="image/x-icon" />
+    <style>
+        body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px; /* Medium text size */
+
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .column_footer {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      background-color: #474e5d;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 5px;
+      text-align: center; /* Center align text and images */
+    }
+
+    .card img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .about-section {
+      background-image: url('static/img_back2.jpg');
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: ghostwhite;
+    }
+
+    .footer {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: ghostwhite;
+    }
+
+    a {
+      color: ghostwhite;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #DADADA;
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    .button_info {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 200px;
+      font-size: 20px;
+    }
+
+    .button_info:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .footer_text {
+      padding-left: 5%;
+    }
+
+
+
+    .center-row {
+      display: flex;
+      justify-content: center;
+    }
+         h1, h2, h3 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        /* Full-width container */
+        .container1 {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: left;
+            margin-bottom: 20px;
+
+        }
+
+        .header h2 {
+            color: #0c2461;
+        }
+
+        /* Input fields */
+        input[type=text], input[type=password], input[type=file] {
+            width: 30%;
+            padding: 15px;
+            margin: 8px 0;
+            border: none;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        input[type=text]:focus, input[type=password]:focus, input[type=file]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Radio buttons */
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        /* Buttons */
+        .registerbtn, .registerbtn1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .registerbtn1 {
+            background-color: #ff7f50;
+            font-size: 18px;
+        }
+
+        .registerbtn:hover, .registerbtn1:hover {
+            opacity: 0.9;
+        }
+
+        /* Links */
+        a {
+            color: #c8d6e5;
+            font-size: 18px;
+        }
+
+        /* Profile Pic */
+        #profile_pic {
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 2px black;
+            margin-left: 10%;
+        }
+
+        /* Center content */
+        .lay {
+            margin-top: -18%;
+            margin-left: 40%;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+                width: 90%;
+            }
+
+            .header h2,h3 {
+                font-size: 20px;
+            }
+
+            .registerbtn, .registerbtn1 {
+                font-size: 14px;
+                padding: 14px 10px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .registerbtn1 {
+                font-size: 16px;
+            }
+        }
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div style="display: flex; margin: 10px;">
+    <div style="width: 35%;"></div>
+    <div style="width: 65%;">
+
+        <div style="display: inline-block">
+            <form action="/"><button class="button_info">Home</button></form></div>
+
+        <div style="display: inline-block">
+            <form action="/vs">
+            <button class="button_info" >Virtual Screening</button>
+            </form>
+        </div>
+        <div style="display: inline-block">
+            <form action="/help">
+                <button class="button_info">Help</button>
+            </form>
+        </div>
+        <div style="display: inline-block">
+            <form action="/team">
+                <button class="button_info">Contact Us</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="about-section">
+    <h1 style="padding:10px">DPNP-CP</h1>
+    <h2>Database of Plant-Derived Natural Products for Crop Protection</h2>
+</div>
+ <div class="container1">
+        {% if ex %}
+             {{ error }}<br>
+        {% endif %}
+        <!-- Welcome Header -->
+        <div class="header">
+            <h2>Welcome to the Binding Affinity Prediction Model</h2>
+            <p>This application provides binding affinity prediction based on machine learning and deep learning regression models.</p>
+        </div>
+
+        <h3 style="color: #0c2461;">Upload a ligand and protein file, and the model will predict the binding affinity.</h3>
+        <p style="color: #0c2461;">Please select Ligand and protein files below:</p>
+
+        <!-- File Upload Form -->
+        <form action="/vs" method="post" enctype="multipart/form-data">
+            <label for="file_ligand">Use DPNP-CP for virtual screening:</label><br>
+
+
+             <input type="radio" id="dpnp_yes" name="DPNP" value="Yes" onclick="toggleVisibility()"checked required>
+            <label for="dpnp_yes">Yes</label><br>
+
+            <input type="radio" id="dpnp_no" name="DPNP" value="No" onclick="toggleVisibility()" >
+            <label for="dpnp_no">No</label><br>
+
+            <div id="sdf_file_vis" class="hidden">
+                <label for="file_ligand">Upload Ligand File (SDF format):</label><br>
+                <input type="file" name="file_ligand" id="file_ligand" /><br><br>
+            </div>
+            <br>
+
+            <label for="file_protein">Upload Whole Protein File or Active Site (PDB format):</label><br>
+            <input type="file" name="file_protein" id="file_protein" required /><br><br>
+
+            <h3 style="color: #0c2461;">Select a Model:</h3>
+            <input type="radio" id="RF" name="BA_model" value="Random Forest" checked required>
+            <label for="RF">Random Forest</label><br><br>
+
+            <input type="radio" id="GB" name="BA_model" value="Gradient Boosting">
+            <label for="GB">Gradient Boosting</label><br><br>
+
+            <input type="radio" id="XG" name="BA_model" value="XG">
+            <label for="GB">XG Boost</label><br><br>
+
+            <input type="radio" id="DNN" name="BA_model" value="DNN">
+            <label for="GB">DNN</label><br><br>
+
+            <input type="submit" class="registerbtn1" value="Submit">
+        </form>
+    </div>
+
+
+<div class="footer">
+    <h3> <a href="static/ICAR_Data_Use_Licence.pdf">ICAR Data Use License</a></h3>
+    <h3>Copyright &copy; ICAR - <a href="https://iasri.icar.gov.in/">Indian Agricultural Statistics Research Institute</a></h3>
+    <h3>Library Avenue, PUSA, New Delhi - 110 012 (INDIA)</h3>
+    <h3>Phone: 91-11-25847121-24, 25841254 (PBX), Fax: 91-11-25841564</h3>
+    <h3>All rights reserved</h3>
+    <a href="https://iasri.icar.gov.in/"><img src="static/iasri.png" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+    <a href="https://icar.org.in/"><img src="static/test_icar.jpg" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+    <a href="https://iari.res.in/en/index.php"><img src="static/iari.png" alt="ICAR" style="width: 100px; height: 100px; border-radius: 50%;"></a>
+</div>
+
+<script>
+        function toggleVisibility() {
+            let inputContainer = document.getElementById("sdf_file_vis");
+            let showRadio = document.querySelector('input[name="DPNP"][value="Yes"]');
+
+            if (showRadio.checked) {
+
+                inputContainer.classList.add("hidden");
+            } else {
+                inputContainer.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
