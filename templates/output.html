@@ -233,8 +233,8 @@
 </div>
 
 <div class="about-section">
-    <h1>DPNP-CP</h1>
-    <h2>Database of Plant-Derived Natural Products for Crop Protection</h2>
+    <h1>ML-VSPred</h1>
+    <h2>Machine Learning Based Models for Virtual Screening</h2>
 </div>
 
     <div class="container">
@@ -260,7 +260,7 @@
                     {% for index, value in predictions %}
                     <tr>
                         <td>{{ index }}</td>
-                        <td>{{ value }}</td>
+                        <td style="text-align: right;">{{ "%.2f"|format(value) }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
