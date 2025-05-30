@@ -12,4 +12,8 @@ tensorflow==2.18.0
 Werkzeug==3.0.4
 xgboost==2.1.4
 gunicorn
-streamlit
+streamlit>=1.30.0
+rich>=13.0.0
+markdown-it-py>=2.2.0
+mdurl>=0.1.0
+pygments>=2.18.0
