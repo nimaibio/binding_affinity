@@ -12,3 +12,4 @@ tensorflow==2.18.0
 Werkzeug==3.0.4
 xgboost==2.1.4
 gunicorn
+streamlit
