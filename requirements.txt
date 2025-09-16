@@ -1,7 +1,7 @@
 biopython==1.84
 freesasa==2.2.1
 Flask==3.0.3
-keras==3.10.0
+keras>=3.10.0 
 matplotlib==3.10.0
 numpy==1.26.4
 pandas==2.2.3
