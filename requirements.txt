@@ -1,3 +1,4 @@
+python-3.10
 biopython==1.84
 freesasa==2.2.1
 Flask==3.0.3
