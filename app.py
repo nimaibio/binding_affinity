@@ -5,8 +5,6 @@ import pandas as pd
 import numpy as np
 import pickle
 import uuid
-import streamlit as st
-import joblib
 from features_functions import *
 
 
